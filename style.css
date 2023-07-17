@@ -76,3 +76,9 @@ body {
 .is-active{
     background-color: white;
 }
+
+#reset{
+  margin-top: 50px;
+  height: 100px;
+  width: 100px;
+}
