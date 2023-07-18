@@ -1,22 +1,56 @@
-body {
+
+body{
+  background-color: #3C486B;
+}
+#main-conatiner{
   display: flex;
   flex-direction: column;
   text-align: center;
-    align-items: center;
+  align-items: center;
+  height: 100vh;
+  color: white;
 }
+
+h1{
+  font-size: 48pt;
+}
+h2{
+  font-size: 36pt;
+}
+
+#btns{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .row {
   display: flex;
 }
 
 .cell {
-  color: red;
+  background-color: #F0F0F0 ;
   height: 200px;
   width: 200px;
   font-size: 150px;
 }
 
+#container{
+  display: flex;
+}
 
-/* Styling Grid */
+#description{
+  font-size: 24pt;
+  text-align: left;
+  padding-left: 120px;
+  padding-top: 20px;
+}
+
+li{
+  line-height: 120px;
+}
+
+/* Creating a Grid */
 #a1 {
   border-bottom: solid 5px black;
   border-right: solid 5px black;
@@ -77,8 +111,10 @@ body {
     background-color: white;
 }
 
-#reset{
+.btns{
   margin-top: 50px;
+  margin-bottom: 20px;
   height: 100px;
-  width: 100px;
+  width: 300px;
+  font-size: 24pt;
 }

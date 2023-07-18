@@ -1,39 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <script src="./script.js" defer></script>
     <title>Document</title>
-</head>
-<body>
-    <h1 id="head">Tic Tac Toe</h1>
-    <h2 id="prompt"></h2>
-
-    <div id = "grid">
-        <!-- Creating rows for the grid -->
-        <!-- top row -->
-    <div class="row">
+  </head>
+  <body>
+      <!-- Home Screen  -->
+      <div id="main-conatiner">
+          <div id="home-screen">
+            <h1>Welcome to Tic Tac Toe</h1>
+            <h2>How would you like to play</h2>
+            <div id="container"> 
+            <div id="btns">
+            <button id="single" class="btns">1 Player</button>
+            <button id ="double" class="btns">2 Player</button>
+            </div>
+            <div id ="description">
+              <p>
+                  How To Play:
+                  <ul>
+                    <li>1 Player: Play against the computer</li>
+                    <li>2 Player: Play against a friend </li>
+                  </ul>
+              </p>
+            </div>
+            </div>
+          </div>
+          
+          <div id="grid">
+              <h1 id="head">Tic Tac Toe</h1>
+              <!-- Creating rows for the grid -->
+              <!-- top row -->
+      <div class="row">
         <div class="cell is-active" id="a1"></div>
         <div class="cell is-active" id="a2"></div>
         <div class="cell is-active" id="a3"></div>
-    </div>
-    <!-- middle row  -->
-    <div class="row">
+      </div>
+      <!-- middle row  -->
+      <div class="row">
         <div class="cell is-active" id="b1"></div>
         <div class="cell is-active" id="b2"></div>
         <div class="cell is-active" id="b3"></div>
-    </div>
-    <!-- bottom row  -->
-    <div class="row">
+      </div>
+      <!-- bottom row  -->
+      <div class="row">
         <div class="cell is-active" id="c1"></div>
         <div class="cell is-active" id="c2"></div>
         <div class="cell is-active" id="c3"></div>
+      </div>
+      <!-- reset button  -->
+      <button id="reset" class="btns">Reset</button>
+      <button id="home" class="btns">Home</button>
     </div>
 </div>
 
-<!-- reset button  -->
-<button id="reset">Reset</button>
-</body>
+  </body>
 </html>

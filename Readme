@@ -1,1 +1,33 @@
-# Tic Tac Toe 
+# Tic Tac Toe Game
+
+Game project for Per Scholas Mod 1.
+
+## Tech Stack
+- HTML
+- CSS
+- JavaScript
+
+## How to play
+
+Play one of two modes:
+
+### Singleplayer
+- Play against the computer
+
+### 2 Player
+- Play against a friend
+
+### Buttons
+- Reset: resets the board
+- Home: returns to the home screen
+
+![Screenshot of game in play](https://imgur.com/a/nMtAMgb);
+
+
+## References Used
+- MDN [WebDocs](https://developer.mozilla.org/en-US/) 
+
+- Geeks4Geeks [simple tic tac toe game using javascript](https://www.geeksforgeeks.org/simple-tic-tac-toe-game-using-javascript/)
+
+- Youtube video by [CodingNepal](https://www.youtube.com/watch?v=sNO5awLw9h0&ab_channel=CodingNepal)
+
