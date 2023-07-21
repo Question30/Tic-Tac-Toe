@@ -29,33 +29,52 @@
             </div>
             </div>
           </div>
-          
-          <div id="grid">
+          <!-- Game Screen  -->
+          <div id="game">
+            <div id="grid">
               <h1 id="head">Tic Tac Toe</h1>
               <!-- Creating rows for the grid -->
               <!-- top row -->
-      <div class="row">
-        <div class="cell is-active" id="a1"></div>
-        <div class="cell is-active" id="a2"></div>
-        <div class="cell is-active" id="a3"></div>
-      </div>
-      <!-- middle row  -->
-      <div class="row">
-        <div class="cell is-active" id="b1"></div>
-        <div class="cell is-active" id="b2"></div>
-        <div class="cell is-active" id="b3"></div>
-      </div>
-      <!-- bottom row  -->
-      <div class="row">
-        <div class="cell is-active" id="c1"></div>
-        <div class="cell is-active" id="c2"></div>
-        <div class="cell is-active" id="c3"></div>
-      </div>
-      <!-- reset button  -->
-      <button id="reset" class="btns">Reset</button>
-      <button id="home" class="btns">Home</button>
-    </div>
+              <div class="row">
+                <div class="cell is-active" id="a1"></div>
+                <div class="cell is-active" id="a2"></div>
+                <div class="cell is-active" id="a3"></div>
+              </div>
+              <!-- middle row  -->
+              <div class="row">
+                <div class="cell is-active" id="b1"></div>
+                <div class="cell is-active" id="b2"></div>
+                <div class="cell is-active" id="b3"></div>
+              </div>
+              <!-- bottom row  -->
+              <div class="row">
+                <div class="cell is-active" id="c1"></div>
+                <div class="cell is-active" id="c2"></div>
+                <div class="cell is-active" id="c3"></div>
+              </div>
+              <!-- reset button  -->
+              <button id="reset" class="btns">Reset</button>
+              <button id="home" class="btns">Home</button>
+            </div>
+            <div class="score-board">
+              <table>
+                <thead>
+                  <tr>
+                    <td>Player 1</td>
+                    <td>player 2</td>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td id ="score1" class="score">
+                    </td>
+                    <td id ="score2" class="score"></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
 </div>
-
-  </body>
+  
+</body>
 </html>

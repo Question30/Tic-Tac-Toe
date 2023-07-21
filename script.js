@@ -26,20 +26,27 @@ const cells = [
 ];
 //Getting Home Screen
 const homeScreen = document.getElementById("home-screen");
-//Getting the Grid
-const grid = document.getElementById("grid");
+//Getting the Game
+const game = document.getElementById("game");
+//Getting ScoreBoard
+const score1 = document.getElementById("score1");
+const score2 = document.getElementById("score2");
+console.log(score1);
 
 //Colors
-const player2Color = '#F9D949';
-const player1Color = '#F45050';
+const player2Color = "#F9D949";
+const player1Color = "#F45050";
 
 //player class
 class Player {
   constructor(name) {
     this.name = name;
     this.isComputer = false;
+    this.score = 0;
+    this.isWinner = false;
   }
 
+  //Computer plays in a random active cell
   computerPlay() {
     if (this.isComputer === true) {
       const tempCells = [];
@@ -82,12 +89,19 @@ function endGame(state) {
   if (state === "player1") {
     h1.textContent = "Player 1 Wins!!";
     h1.style.color = player1Color;
+    player1.isWinner = true;
+    player1.score++;
+    console.log(player1.score);
+    drawTally(player1.score, score1);
   } else if (state === "player2") {
     h1.textContent = "Player 2 Wins!!";
     h1.style.color = player2Color;
+    player2.isWinner = true;
+    player2.score++;
+    drawTally(player2.score, score2);
   } else {
     h1.textContent = "It's a Tie!!";
-    h1.style.color = '#F0F0F0';
+    h1.style.color = "#F0F0F0";
   }
 }
 
@@ -116,7 +130,7 @@ function resetBoard() {
     player2.isWinner = false;
     playerTurn = 0;
     turns = 0;
-    h1.style.color = "black";
+    h1.style.color = "white";
     h1.textContent = "Player 1(X)'s turn";
   }
   console.log("reseting board");
@@ -131,7 +145,6 @@ function checkForwinner() {
       cellA3.textContent === "X"
     ) {
       console.log("Player1 is the winner!");
-      player1.isWinner = true;
       endGame("player1");
     } else if (
       cellB1.textContent == "X" &&
@@ -139,7 +152,7 @@ function checkForwinner() {
       cellB3.textContent === "X"
     ) {
       console.log("Player1 is the winner!");
-      player1.isWinner = true;
+
       endGame("player1");
     } else if (
       cellC1.textContent == "X" &&
@@ -147,7 +160,7 @@ function checkForwinner() {
       cellC3.textContent === "X"
     ) {
       console.log("Player1 is the winner!");
-      player1.isWinner = true;
+
       endGame("player1");
     } else if (
       cellA1.textContent == "X" &&
@@ -155,7 +168,7 @@ function checkForwinner() {
       cellC1.textContent === "X"
     ) {
       console.log("Player1 is the winner!");
-      player1.isWinner = true;
+
       endGame("player1");
     } else if (
       cellA2.textContent == "X" &&
@@ -163,7 +176,7 @@ function checkForwinner() {
       cellC2.textContent === "X"
     ) {
       console.log("Player1 is the winner!");
-      player1.isWinner = true;
+
       endGame("player1");
     } else if (
       cellA3.textContent == "X" &&
@@ -171,7 +184,7 @@ function checkForwinner() {
       cellC3.textContent === "X"
     ) {
       console.log("Player1 is the winner!");
-      player1.isWinner = true;
+
       endGame("player1");
     } else if (
       cellA1.textContent == "X" &&
@@ -179,7 +192,7 @@ function checkForwinner() {
       cellC3.textContent === "X"
     ) {
       console.log("Player1 is the winner!");
-      player1.isWinner = true;
+
       endGame("player1");
     } else if (
       cellA3.textContent == "X" &&
@@ -187,7 +200,7 @@ function checkForwinner() {
       cellC1.textContent === "X"
     ) {
       console.log("Player1 is the winner!");
-      player1.isWinner = true;
+
       endGame("player1");
     } else {
       player1.isWinner = false;
@@ -200,7 +213,7 @@ function checkForwinner() {
       cellA3.textContent === "O"
     ) {
       cconsole.log("player2 is the winner!");
-      player2.isWinner = true;
+
       endGame("player2");
     } else if (
       cellB1.textContent == "O" &&
@@ -208,7 +221,7 @@ function checkForwinner() {
       cellB3.textContent === "O"
     ) {
       console.log("player2 is the winner!");
-      player2.isWinner = true;
+
       endGame("player2");
     } else if (
       cellC1.textContent == "O" &&
@@ -216,7 +229,7 @@ function checkForwinner() {
       cellC3.textContent === "O"
     ) {
       console.log("player2 is the winner!");
-      player2.isWinner = true;
+
       endGame("player2");
     } else if (
       cellA1.textContent == "O" &&
@@ -224,7 +237,7 @@ function checkForwinner() {
       cellC1.textContent === "O"
     ) {
       console.log("player2 is the winner!");
-      player2.isWinner = true;
+
       endGame("player2");
     } else if (
       cellA2.textContent == "O" &&
@@ -232,7 +245,7 @@ function checkForwinner() {
       cellC2.textContent === "O"
     ) {
       console.log("player2 is the winner!");
-      player2.isWinner = true;
+
       endGame("player2");
     } else if (
       cellA3.textContent == "O" &&
@@ -240,7 +253,7 @@ function checkForwinner() {
       cellC3.textContent === "O"
     ) {
       console.log("player2 is the winner!");
-      player2.isWinner = true;
+
       endGame("player2");
     } else if (
       cellA1.textContent == -"O" &&
@@ -248,7 +261,7 @@ function checkForwinner() {
       cellC3.textContent === "O"
     ) {
       console.log("player2 is the winner!");
-      player2.isWinner = true;
+
       endGame("player2");
     } else if (
       cellA3.textContent === "O" &&
@@ -256,7 +269,7 @@ function checkForwinner() {
       cellC1.textContent === "O"
     ) {
       console.log("player2 is the winner!");
-      player2.isWinner = true;
+
       endGame("player2");
     } else {
       player2.isWinner = false;
@@ -275,6 +288,58 @@ function checkForTie() {
     }
   }
 }
+
+//Scoreboard Fucntion creates tally marks
+function drawTally(num, player){
+  let tally = "";
+  let newNum;
+  const nodes = player.childNodes;
+  if(num === 0){
+      return;
+  }
+  if(player.hasChildNodes){
+    player.innerHTML = " ";
+  }
+  if(num < 5){
+      for(let i = 0; i < num; i++){
+          tally +='|';
+      }
+      let p = document.createElement('p');
+      p.textContent = tally;
+      player.append(p);
+  }else{
+      if(num % 5 === 0){
+          newNum = num / 5;
+          for(let i = 0; i < newNum; i++){
+              tally +='||||';
+              let p = document.createElement('p');
+              p.textContent = tally;
+              p.style.textDecoration = 'line-through';
+              player.append(p);
+              tally = "";
+          }
+      }else{
+          newNum = Math.floor(num / 5);
+          for(let i = 0; i < newNum; i++){
+              tally +='||||';
+              let p = document.createElement('p');
+              p.textContent = tally;
+              p.style.textDecoration = 'line-through';
+              player.append(p);
+              tally = "";
+      }
+        newNum = num % 5;
+        for(let i = 0; i < newNum; i++){
+          tally +='|';
+      }
+      let p = document.createElement('p');
+      p.textContent = tally;
+      player.append(p);
+  }
+
+}
+}
+
 //Player instances
 const player1 = new Player("X");
 const player2 = new Player("O");
@@ -283,24 +348,24 @@ let playerTurn = 0; // 0 = player 1, 1 = player 2
 let turns = 1;
 h1.textContent = "Player 1(X)'s turn";
 
-grid.style.display = "none";
+game.style.display = "none";
 //Starting Menu
 homeScreen.addEventListener("click", function (event) {
   if (event.target === document.getElementById("single")) {
     resetBoard();
     player2.isComputer = true;
     homeScreen.style.display = "none";
-    grid.style.removeProperty("display");
+    game.style.removeProperty("display");
   } else if (event.target === document.getElementById("double")) {
     resetBoard();
     player2.isComputer = false;
     homeScreen.style.display = "none";
-    grid.style.removeProperty("display");
+    game.style.removeProperty("display");
   }
 });
 
 //Game
-grid.addEventListener("click", function (event) {
+game.addEventListener("click", function (event) {
   if (playerTurn === 0) {
     if (event.target.classList.contains("is-active")) {
       h1.textContent = "Player 2(O)'s turn";
@@ -314,7 +379,7 @@ grid.addEventListener("click", function (event) {
         player2.computerPlay();
         playerTurn = 0;
         turns++;
-        console.log(turns);
+        // console.log(turns);
         checkForwinner("player2");
       }
     } else {
@@ -340,9 +405,13 @@ grid.addEventListener("click", function (event) {
 document.getElementById("reset").addEventListener("click", () => resetBoard());
 
 //Returns to the home screen when clicked
-document.getElementById('home').addEventListener('click', function (){
+document.getElementById("home").addEventListener("click", function () {
   player2.isComputer = false;
-  grid.style.display = "none";
+  game.style.display = "none";
   homeScreen.style.removeProperty("display");
-})
+  score1.innerHTML =" ";
+  score2.innerHTML =" ";
+  player1.score = 0;
+  player2.score2 = 0;
+});
 
