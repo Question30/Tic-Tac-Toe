@@ -10,8 +10,9 @@
   background-color: green;
   border: solid 10px brown;
   font-family: 'Margarine', cursive;
-  width: 100%;
+  width: 90%;
   min-width: fit-content;
+  margin: 0 auto;
 }
 
 h1{
@@ -38,8 +39,15 @@ h2{
   font-size: 150px;
 }
 
+.cell:hover{
+  background-color: darkgreen;
+}
+
 #container{
   display: flex;
+  border: solid 3px white;
+  border-radius: 30px;
+  padding: 10px;
 }
 
 #description{
@@ -121,9 +129,14 @@ li{
   width: 300px;
   font-size: 24pt;
   font-family: 'Margarine', cursive;
-  background-color: darkgreen;
+  background-color: green;
   border: solid 4px white;
   color: white;
+  border-radius: 30px;
+}
+
+.btns:hover{
+  background-color: darkgreen;
 }
 
 #game{

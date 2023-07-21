@@ -101,7 +101,7 @@ function endGame(state) {
     drawTally(player2.score, score2);
   } else {
     h1.textContent = "It's a Tie!!";
-    h1.style.color = "#F0F0F0";
+    h1.style.color = 'white';
   }
 }
 
@@ -283,22 +283,21 @@ function checkForwinner() {
 function checkForTie() {
   if (turns >= 9) {
     if (player1.isWinner === false && player2.isWinner === false) {
-      console.log("Game is a tie");
+      // console.log("Game is a tie");
       endGame("tie");
     }
   }
 }
 
 //Scoreboard Fucntion creates tally marks
-function drawTally(num, player){
+function drawTally(num, playerSide){
   let tally = "";
   let newNum;
-  const nodes = player.childNodes;
   if(num === 0){
       return;
   }
-  if(player.hasChildNodes){
-    player.innerHTML = " ";
+  if(playerSide.hasChildNodes){
+    playerSide.innerHTML = " ";
   }
   if(num < 5){
       for(let i = 0; i < num; i++){
@@ -306,7 +305,7 @@ function drawTally(num, player){
       }
       let p = document.createElement('p');
       p.textContent = tally;
-      player.append(p);
+      playerSide.append(p);
   }else{
       if(num % 5 === 0){
           newNum = num / 5;
@@ -315,7 +314,7 @@ function drawTally(num, player){
               let p = document.createElement('p');
               p.textContent = tally;
               p.style.textDecoration = 'line-through';
-              player.append(p);
+              playerSide.append(p);
               tally = "";
           }
       }else{
@@ -325,7 +324,7 @@ function drawTally(num, player){
               let p = document.createElement('p');
               p.textContent = tally;
               p.style.textDecoration = 'line-through';
-              player.append(p);
+              playerSide.append(p);
               tally = "";
       }
         newNum = num % 5;
@@ -334,7 +333,7 @@ function drawTally(num, player){
       }
       let p = document.createElement('p');
       p.textContent = tally;
-      player.append(p);
+      playerSide.append(p);
   }
 
 }
