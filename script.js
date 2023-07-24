@@ -1,4 +1,4 @@
-//Grabbing h elements
+//Grabbing h1 element
 let h1 = document.getElementById("head");
 
 //Getting the cell
@@ -24,16 +24,19 @@ const cells = [
   cellC2,
   cellC3,
 ];
+
 //Getting Home Screen
 const homeScreen = document.getElementById("home-screen");
-//Getting the Game
+
+//Getting the Game Board
 const game = document.getElementById("game");
+
 //Getting ScoreBoard
 const score1 = document.getElementById("score1");
 const score2 = document.getElementById("score2");
 console.log(score1);
 
-//Colors
+//Player colors
 const player2Color = "#F9D949";
 const player1Color = "#F45050";
 
@@ -400,10 +403,11 @@ game.addEventListener("click", function (event) {
     }
   }
 });
+
 //Resets the board on clicking the reset button
 document.getElementById("reset").addEventListener("click", () => resetBoard());
 
-//Returns to the home screen when clicked
+//Returns to the home screen when clicked and clears the scoreboard
 document.getElementById("home").addEventListener("click", function () {
   player2.isComputer = false;
   game.style.display = "none";
